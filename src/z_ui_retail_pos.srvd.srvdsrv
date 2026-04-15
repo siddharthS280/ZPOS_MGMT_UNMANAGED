@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition for Retail POS'
+define service Z_UI_RETAIL_POS {
+  expose Z_I_Retail_HD as POSHeader;
+  expose Z_I_Retail_IT as POSItem;
+}

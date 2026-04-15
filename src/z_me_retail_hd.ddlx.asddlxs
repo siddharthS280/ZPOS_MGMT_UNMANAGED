@@ -1,0 +1,36 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { 
+    typeName: 'POS Transaction', 
+    typeNamePlural: 'POS Transactions', 
+    title: { type: #STANDARD, value: 'ReceiptID' } 
+  }
+}
+annotate view Z_I_Retail_HD with
+{
+  @UI.facet: [
+    { id: 'idHeader', type: #IDENTIFICATION_REFERENCE, label: 'General Info', position: 10 },
+    { id: 'idItems',  type: #LINEITEM_REFERENCE,       label: 'Items',        position: 20, targetElement: '_Items' }
+  ]
+
+  @UI.hidden: true
+  TransactionUUID;
+
+  @UI: { lineItem:       [{ position: 10, importance: #HIGH }],
+         identification: [{ position: 10, label: 'Receipt ID' }],
+         selectionField: [{ position: 10 }] }
+  ReceiptID;
+
+  @UI: { lineItem:       [{ position: 20 }],
+         identification: [{ position: 20, label: 'Store Number' }],
+         selectionField: [{ position: 20 }] }
+  StoreID;
+
+  @UI: { lineItem:       [{ position: 30 }],
+         identification: [{ position: 30, label: 'Date' }] }
+  TransDate;
+
+  @UI: { lineItem:       [{ position: 40 }],
+         identification: [{ position: 40, label: 'Total Amount' }] }
+  GrossAmount;
+}

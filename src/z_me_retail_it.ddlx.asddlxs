@@ -1,0 +1,36 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { 
+    typeName: 'Item', 
+    typeNamePlural: 'Items', 
+    title: { type: #STANDARD, value: 'MaterialID' } 
+  }
+}
+annotate view Z_I_Retail_IT with
+{
+  @UI.facet: [ 
+    { id: 'idItemDetails', type: #IDENTIFICATION_REFERENCE, label: 'Item Details', position: 10 } 
+  ]
+
+  @UI.hidden: true
+  ParentUUID;
+
+  @UI: { lineItem:       [{ position: 10 }], 
+         identification: [{ position: 10, label: 'Line Item No.' }] }
+  LineItemID;
+
+  @UI: { lineItem:       [{ position: 20, importance: #HIGH }], 
+         identification: [{ position: 20, label: 'Material' }] }
+  MaterialID;
+
+  @UI: { lineItem:       [{ position: 30 }], 
+         identification: [{ position: 30, label: 'Quantity' }] }
+  SaleQuantity;
+
+  @UI: { lineItem:       [{ position: 40 }], 
+         identification: [{ position: 40, label: 'Price' }] }
+  NetPrice;
+
+  @UI.identification: [{ position: 50, label: 'Unit' }]
+  Unit;
+}

@@ -1,0 +1,5 @@
+CLASS zcl_retail_pos_handler DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF z_i_retail_hd.
+ENDCLASS.
+
+CLASS zcl_retail_pos_handler IMPLEMENTATION.
+ENDCLASS.
